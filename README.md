@@ -6,8 +6,8 @@ The user can add a time to his/her file and can get how much money he/she can ha
 ### Why was this program made?
 During second semester of my second year of undergrad, I thought of the idea to incentivize the time I put in studying and doing necessary coursework. Instead of writing down the hour/minutes I spend on doing school work, I made this simple program.
 
-### Future Update:
-I will be adding a database system (likely MySQL) integrated in the Python code for a more proficient saving and restoring of data.
+### Update:
+I have added a simple database system usign SQLite integrated in the Python files for a more proficient way of saving and restoring of data.
 
 ### How to run it:
 
