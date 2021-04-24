@@ -1,6 +1,6 @@
 '''
 References: https://sqlite.org/datatype3.html
-Last edited: April 04, 2021
+Last edited: April 23, 2021
 '''
 import sqlite3
 
@@ -176,20 +176,16 @@ class Database():
         self.cursor.execute(insert_time, data)
         self.connection.commit()
     
-    def addMoney(self, update, user_id, time_mins, prize_amt):
+    def addMoney(self, update, user, time_mins, prize_amt):
         # inserts or updates the given time
-        data_not_exists = (user_id, time_mins, prize_amt)
-        user = (user_id,)
-        time_mins_data = (time_mins,)
-        prize_amt_data = (prize_amt,)
+        data_not_exists = (user, time_mins, prize_amt)
         if update:
             query = '''
-                        UPDATE money
-                        SET time = :time_input
-                        SET money_per_time = :amount
-                        WHERE user_id = :id;
+                    UPDATE money
+                    SET time = :time_input, money_per_time = :amount
+                    WHERE user_id = :id;
                     '''
-            self.cursor.execute(query, {"time_input":time_mins_data, "amount":prize_amt_data, "id":user})
+            self.cursor.execute(query, {"time_input":time_mins, "amount":prize_amt, "id":user})
         else:
             query = '''INSERT INTO money(user_id, time, money_per_time) VALUES (?,?,?);'''
             self.cursor.execute(query, data_not_exists)
