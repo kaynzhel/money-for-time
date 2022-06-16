@@ -1,5 +1,4 @@
 '''
-Last edited: April 04, 2021
 '''
 import os
 from getInterface import Interface
